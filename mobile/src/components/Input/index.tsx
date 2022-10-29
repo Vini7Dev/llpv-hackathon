@@ -1,6 +1,5 @@
 import React from 'react'
 import { TextInputProps } from 'react-native'
-import FeatherIcons from '@expo/vector-icons/Feather'
 
 import {
   InputContainer,

@@ -9,8 +9,8 @@ export const Login: React.FC = () => {
     <Container>
       <PageTitle>Bem vindo(a), Vamos começar?</PageTitle>
 
-      <Input name="user" placeholder="Email" icon="user" />
-      <Input name="user" placeholder="Senha" icon="lock" />
+      <Input name="user" placeholder="E-mail" icon="user" />
+      <Input name="password" placeholder="Senha" icon="lock" />
 
       <Button text="Entrar" />
     </Container>
