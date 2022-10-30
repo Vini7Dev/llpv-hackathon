@@ -25,7 +25,6 @@ export const PageTitle = styled.Text`
 
 export const DateInputsContainer = styled.View`
   flex-direction: row;
-  // margin-bottom: 1px solid #3F444D;
 `
 
 export const DateInputsDivisor = styled.View`
@@ -89,3 +88,54 @@ export const SelectDateIntervalAlert = styled.Text`
 `
 
 export const SuccessArea = styled.View``
+
+export const ModalTitle = styled.Text`
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FD620B;
+`
+
+export const ModalDescription = styled.Text`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+`
+
+export const ModalQuestion = styled.Text`
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+`
+
+export const ModalButtonsContainer = styled.Text`
+  align-items: center;
+`
+
+export const ModalButtonPrimaryContainer = styled.View`
+  border: 1px solid #FD620B;
+  padding: 10px 20px;
+  background-color: #FD620B;
+`
+
+export const ModalButtonPrimary = styled.Text`
+  font-weight: 600;
+  font-size: 12.7818px;
+  line-height: 18px;
+  color: #fff;
+`
+
+export const ModalButtonSecondaryContainer = styled.View`
+  border: 1px solid #FD620B;
+  padding: 10px 20px;
+  margin-left: auto;
+`
+
+export const ModalButtonSecondary = styled.Text`
+  font-weight: 600;
+  font-size: 12.7818px;
+  line-height: 18px;
+  color: #FD620B;
+`

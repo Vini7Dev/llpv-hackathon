@@ -17,10 +17,19 @@ import {
   CashFlowValueBold,
   SelectDateIntervalAlert,
   SuccessArea,
+  ModalDescription,
+  ModalTitle,
+  ModalQuestion,
+  ModalButtonsContainer,
+  ModalButtonPrimary,
+  ModalButtonSecondary,
+  ModalButtonSecondaryContainer,
+  ModalButtonPrimaryContainer,
 } from './styles'
 import { DateInput } from '../../components/DateInput'
 import { CashFlowItem } from '../../components/CashFlowItem'
 import { api } from '../../services/api'
+import { Modal } from '../../components/Modal'
 
 interface ICashFlowItemProps {
   Data: string
@@ -117,6 +126,25 @@ export const CashFlow: React.FC = () => {
             )
         }
       </Container>
+
+      {
+        /**
+        <Modal>
+          <ModalTitle>Autorizar Visualização?</ModalTitle>
+          <ModalDescription>Você recebeu uma solitação para autorizar a visualização dos seus dados bancários. </ModalDescription>
+          <ModalQuestion>Deseja autorizar a visualização?</ModalQuestion>
+          <ModalButtonsContainer>
+            <ModalButtonSecondaryContainer>
+              <ModalButtonSecondary>Não Autorizar</ModalButtonSecondary>
+            </ModalButtonSecondaryContainer>
+
+            <ModalButtonPrimaryContainer>
+              <ModalButtonPrimary>Autorizar</ModalButtonPrimary>
+            </ModalButtonPrimaryContainer>
+          </ModalButtonsContainer>
+        </Modal>
+        */
+      }
     </>
   )
 }
