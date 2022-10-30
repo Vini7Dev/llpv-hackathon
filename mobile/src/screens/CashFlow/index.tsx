@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { ActivityIndicator } from 'react-native'
 
 import {
   TopBar,
@@ -15,6 +16,7 @@ import {
   CashFlowValue,
   CashFlowValueBold,
   SelectDateIntervalAlert,
+  SuccessArea,
 } from './styles'
 import { DateInput } from '../../components/DateInput'
 import { CashFlowItem } from '../../components/CashFlowItem'
@@ -47,12 +49,18 @@ export const CashFlow: React.FC = () => {
   const [cashFlowList, setCashFlowList] = useState<ICashFlowItemProps[]>(TEMP_DATA)
   const [fromDate, setFromDate] = useState<string>()
   const [toDate, setToDate] = useState<string>()
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const handleGetCashFlow = async () => {
       if (!fromDate || !toDate) {
         return
       }
+      
+      setLoading(true)
+      setTimeout(() => {
+        setLoading(false)
+      }, 3000)
   
       const result = await api.get('/entrepeneur/cashflow')
   
@@ -78,35 +86,45 @@ export const CashFlow: React.FC = () => {
         </DateInputsContainer>
 
         {
-          !fromDate || !toDate
-          ? <SelectDateIntervalAlert>Selecione um intervalo de datas</SelectDateIntervalAlert>
-          : (
-            <CashFlowList keyboardShouldPersistTaps="handled">
-              <CashFlowMonth>Resultado</CashFlowMonth>
-              {
-                cashFlowList.map((data, i) => (
-                  <CashFlowPerMonth>
-                    <CashFlowItem
-                      key={i}
-                      data={data.Data}
-                      entry={data.Entry}
-                      out={data.Out}
-                    />
-                  </CashFlowPerMonth>
-                ))
-              }
-              
-              <CashFlowTotalContainer>
-                <CashFlowTotalIcon name="arrow-right" color="#2F6FED" size={23} />
-                <CashFlowTotalDescription>Saldo total</CashFlowTotalDescription>
-                <CashFlowValue>
-                  R$ <CashFlowValueBold>150,00</CashFlowValueBold>
-                </CashFlowValue>
-              </CashFlowTotalContainer>
-            </CashFlowList>
-          )
+          loading
+          ? <LoadingComponent />
+          : !fromDate || !toDate
+            ? <SelectDateIntervalAlert>Selecione um intervalo de datas</SelectDateIntervalAlert>
+            : (
+              <CashFlowList keyboardShouldPersistTaps="handled">
+                <CashFlowMonth>Resultado</CashFlowMonth>
+                {
+                  cashFlowList.map((data, i) => (
+                    <CashFlowPerMonth>
+                      <CashFlowItem
+                        key={i}
+                        data={data.Data}
+                        entry={data.Entry}
+                        out={data.Out}
+                      />
+                    </CashFlowPerMonth>
+                  ))
+                }
+                
+                <CashFlowTotalContainer>
+                  <CashFlowTotalIcon name="arrow-right" color="#2F6FED" size={23} />
+                  <CashFlowTotalDescription>Saldo total</CashFlowTotalDescription>
+                  <CashFlowValue>
+                    R$ <CashFlowValueBold>{TEMP_DATA[TEMP_DATA.length - 1].Amount}</CashFlowValueBold>
+                  </CashFlowValue>
+                </CashFlowTotalContainer>
+              </CashFlowList>
+            )
         }
       </Container>
     </>
+  )
+}
+
+const LoadingComponent: React.FC = () => {
+  return (
+    <SuccessArea>
+      <ActivityIndicator color="#2F6FED" size={52} />
+    </SuccessArea>
   )
 }

@@ -87,3 +87,5 @@ export const SelectDateIntervalAlert = styled.Text`
   line-height: 29px;
   margin: 20px 0;
 `
+
+export const SuccessArea = styled.View``
