@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState } from 'react'
 import { TextInputProps } from 'react-native'
 import CalendarPicker from 'react-native-calendar-picker'
 
@@ -14,22 +14,17 @@ import {
 } from './styles'
 
 interface DateInputProps extends TextInputProps {
-  name: string
   label: string
   placeholder: string
+  onDateChange(date: string): void
 }
 
 export const DateInput: React.FC<DateInputProps> = ({
-  name,
   label,
   placeholder,
+  onDateChange,
 }) => {
   const [showCalendar, setShowCalendar] = useState(false)
-
-  const handleUpdateSelectedDate = useCallback((date: any) => {
-    setShowCalendar(false)
-    console.log('===> date', date)
-  }, [])
 
   return (
     <>
@@ -52,7 +47,14 @@ export const DateInput: React.FC<DateInputProps> = ({
         showCalendar && (
           <CalendarModal>
             <CalendarModalContent>
-              <CalendarPicker onDateChange={(date) => handleUpdateSelectedDate(date)} />
+              <CalendarPicker onDateChange={(date) => {
+                const dateDay = new Date(date.toString()).getDate()
+                const dateMonth = new Date(date.toString()).getMonth()
+                const dateYear = new Date(date.toString()).getFullYear()
+
+                onDateChange(`${dateDay}/${dateMonth + 1}/${dateYear}`)
+                setShowCalendar(false)
+              }} />
             </CalendarModalContent>
           </CalendarModal>
         )

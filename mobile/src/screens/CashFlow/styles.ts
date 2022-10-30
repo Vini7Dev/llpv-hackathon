@@ -48,7 +48,7 @@ export const CashFlowMonth = styled.Text`
 export const CashFlowTotalContainer = styled.View`
   flex-direction: row;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 120px;
 `
 
 export const CashFlowTotalIcon = styled(FeatherIcons)`
@@ -80,4 +80,10 @@ export const CashFlowValueBold = styled.Text`
   font-size: 15px;
   line-height: 18px;
   margin-left: auto;
+`
+
+export const SelectDateIntervalAlert = styled.Text`
+  font-size: 18px;
+  line-height: 29px;
+  margin: 20px 0;
 `

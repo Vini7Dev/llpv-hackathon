@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import { Login } from '../screens/Login'
 import { Signup } from '../screens/Signup'
+import { CashFlow } from '../screens/CashFlow';
 
 const App = createStackNavigator();
 
@@ -11,6 +12,7 @@ export const AppRoutes: React.FC = () => {
     <App.Navigator screenOptions={{ headerShown: false }}>
       <App.Screen name="Login" component={Login} />
       <App.Screen name="Signup" component={Signup} />
+      <App.Screen name="CashFlow" component={CashFlow} />
     </App.Navigator>
   )
 }

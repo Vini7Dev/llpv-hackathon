@@ -19,30 +19,23 @@ export const CashFlowPositiveIcon = styled(FeatherIcons)`
 `
 
 export const CashFlowNegativeIcon = styled(FeatherIcons)`
-  width: 30px;
-  height: 30px;
   background-color: #FEF1F2;
   color: #E02D3C;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
 `
 
-export const CashFlowDescriptionContainer = styled.View`
-  width: 100%;
-  margin-left: 12px;
-`
 
-export const CashFlowDescription = styled.Text`
+export const CashFlowDate = styled.Text`
   font-weight: 400;
   font-size: 15px;
   line-height: 18px;
   color: #3F444D;
-  margin-bottom: 5px;
-`
-
-export const CashFlowDate = styled.Text`
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 18px;
-  color: #3F444D;
+  width: 100%;
+  margin-left: 12px;
 `
 
 export const CashFlowValue = styled.Text`

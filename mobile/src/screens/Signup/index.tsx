@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ActivityIndicator, KeyboardAvoidingView, Platform } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import StepIndicator from 'react-native-step-indicator'
@@ -16,6 +16,7 @@ import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 
 import emogiSubtitle from '../../assets/emogi-subtitle.png'
+import { useNavigation } from '@react-navigation/native'
 
 const labels = ["Identificação","Acesso","Sucesso!"]
 const customStyles = {
@@ -113,6 +114,14 @@ const Step2: React.FC<{ onPressToContinue(step: number): void}> = ({
 }
 
 const Step3: React.FC = () => {
+  const navigation = useNavigation()
+
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('CashFlow')
+    }, 3000)
+  }, [])
+
   return (
     <SuccessArea>
       <ActivityIndicator color="#2F6FED" size={52} />

@@ -13,3 +13,5 @@ export const PageTitle = styled.Text`
   line-height: 26px;
   margin-bottom: 88px;
 `
+
+export const SuccessArea = styled.View``

@@ -4,34 +4,36 @@ import {
   CashFlowItemContainer,
   CashFlowPositiveIcon,
   CashFlowNegativeIcon,
-  CashFlowDescriptionContainer,
-  CashFlowDescription,
   CashFlowDate,
   CashFlowValue,
   CashFlowValueBold,
 } from './styles'
 
 interface ICashFlowItemProps {
-  description: string
-  date: string
-  value: number
+  data: string
+  entry: number
+  out: number
 }
 
-export const CashFlowItem: React.FC<ICashFlowItemProps> = () => {
+export const CashFlowItem: React.FC<ICashFlowItemProps> = ({
+  data,
+  entry,
+  out,
+}) => {
   return (
     <CashFlowItemContainer>
-      <CashFlowPositiveIcon name="plus" color="#08875D" size={23} />
       {
-        //<CashFlowNegativeIcon name="plus" color="#08875D" size={23} />
+        out
+        ? <CashFlowNegativeIcon name="minus" size={23} />
+        : <CashFlowPositiveIcon name="plus" size={23} />
       }
 
-      <CashFlowDescriptionContainer>
-        <CashFlowDescription>Vendas e-commerce</CashFlowDescription>
-        <CashFlowDate>10/10/2022</CashFlowDate>
-      </CashFlowDescriptionContainer>
+      <CashFlowDate>{data}</CashFlowDate>
       
       <CashFlowValue>
-        R$ <CashFlowValueBold>50,00</CashFlowValueBold>
+        {out ? '-' : null}R$ <CashFlowValueBold>{
+          (entry || out * -1).toFixed(2)
+        }</CashFlowValueBold>
       </CashFlowValue>
     </CashFlowItemContainer>
   )
