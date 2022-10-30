@@ -3,7 +3,7 @@ import { KeyboardAvoidingView, Platform } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 
 import { Container, PageSubtitle, PageTitle, SubmitButtonArea, SubtitleImage } from './styles'
-import Button from '../../components/Button'
+import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 
 import emogiSubtitle from '../../assets/emogi-subtitle.png'

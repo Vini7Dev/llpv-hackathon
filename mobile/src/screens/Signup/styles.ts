@@ -9,7 +9,6 @@ export const Container = styled.View`
 `
 
 export const PageTitle = styled.Text`
-  font-family: 'Inter';
   font-weight: 700;
   font-size: 24px;
   line-height: 29px;
@@ -18,7 +17,6 @@ export const PageTitle = styled.Text`
 `
 
 export const PageSubtitle = styled.Text`
-  font-family: 'Inter';
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;

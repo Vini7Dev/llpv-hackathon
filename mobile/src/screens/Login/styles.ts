@@ -8,7 +8,6 @@ export const Container = styled.View`
 `
 
 export const PageTitle = styled.Text`
-  font-family: 'Inter';
   font-weight: 700;
   font-size: 26px;
   line-height: 26px;

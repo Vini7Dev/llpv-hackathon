@@ -7,14 +7,10 @@ interface ButtonProps extends RectButtonProperties {
   text: string
 }
 
-const Button: React.FC<ButtonProps> = ({ text, ...rest }) => {
+export const Button: React.FC<ButtonProps> = ({ text, ...rest }) => {
   return (
     <ButtonContainer {...rest}>
       <ButtonText>{text}</ButtonText>
     </ButtonContainer>
   )
 }
-
-export default Button
-
-
