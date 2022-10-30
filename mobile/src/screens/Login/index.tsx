@@ -16,6 +16,8 @@ export const Login: React.FC = () => {
       <Input name="password" placeholder="Senha" icon="lock" />
 
       <Button text="Entrar" onPress={() => navigation.navigate('Signup')} />
+      
+      <Button text="Cadastrar-se" variant="secondary" onPress={() => navigation.navigate('Signup')} />
     </Container>
   )
 }

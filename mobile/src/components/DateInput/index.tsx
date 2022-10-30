@@ -39,7 +39,10 @@ export const DateInput: React.FC<DateInputProps> = ({
         <DateInputContainer>
           <DateInputIcon name="calendar" size={27} color="#2F6FED" />
 
-          <DateInputButton onPress={() => setShowCalendar(true)}>
+          <DateInputButton onPress={() => {
+            console.log('====> setShowCalendar(true)')
+            setShowCalendar(true)
+          }}>
             <DateInputButtonText>{placeholder}</DateInputButtonText>
           </DateInputButton>
         </DateInputContainer>

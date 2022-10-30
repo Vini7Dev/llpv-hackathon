@@ -5,12 +5,13 @@ import { ButtonContainer, ButtonText } from './styles'
 
 interface ButtonProps extends RectButtonProperties {
   text: string
+  variant?: 'primary' | 'secondary'
 }
 
-export const CacshFlowItem: React.FC<ButtonProps> = ({ text, ...rest }) => {
+export const Button: React.FC<ButtonProps> = ({ text, variant = 'primary', ...rest }) => {
   return (
-    <ButtonContainer {...rest}>
-      <ButtonText>{text}</ButtonText>
+    <ButtonContainer variant={variant} {...rest}>
+      <ButtonText variant={variant}>{text}</ButtonText>
     </ButtonContainer>
   )
 }
