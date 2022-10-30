@@ -7,7 +7,7 @@ interface ButtonProps extends RectButtonProperties {
   text: string
 }
 
-export const Button: React.FC<ButtonProps> = ({ text, ...rest }) => {
+export const CacshFlowItem: React.FC<ButtonProps> = ({ text, ...rest }) => {
   return (
     <ButtonContainer {...rest}>
       <ButtonText>{text}</ButtonText>
