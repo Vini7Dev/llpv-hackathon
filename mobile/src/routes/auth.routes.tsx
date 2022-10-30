@@ -3,14 +3,16 @@ import { createStackNavigator } from '@react-navigation/stack'
 
 import { Login } from '../screens/Login'
 import { Signup } from '../screens/Signup'
+import { CashFlow } from '../screens/CashFlow';
 
-const App = createStackNavigator();
+const Auth = createStackNavigator();
 
-export const AppRoutes: React.FC = () => {
+export const AuthRoutes: React.FC = () => {
   return (
-    <App.Navigator screenOptions={{ headerShown: false }}>
-      <App.Screen name="Login" component={Login} />
-      <App.Screen name="Signup" component={Signup} />
-    </App.Navigator>
+    <Auth.Navigator screenOptions={{ headerShown: false }}>
+      <Auth.Screen name="Login" component={Login} />
+      <Auth.Screen name="Signup" component={Signup} />
+      <Auth.Screen name="CashFlow" component={CashFlow} />
+    </Auth.Navigator>
   )
 }
